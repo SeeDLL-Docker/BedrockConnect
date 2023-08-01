@@ -42,7 +42,6 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build
-        uses: docker/build-push-action@v4
         run: |
           docker buildx build -f ./context/Dockerfile -c ./context --tag ${{ secrets.REGISTRY }}/${{ secrets.BEDROCKCONNECT }}:latest
 
