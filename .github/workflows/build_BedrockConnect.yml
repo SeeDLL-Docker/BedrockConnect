@@ -43,12 +43,8 @@ jobs:
 
       - name: Build
         uses: docker/build-push-action@v4
-        with:
-          context: ./context
-          file: ./context/Dockerfile
-          platforms: linux/amd64
-          tags: |
-            ${{ secrets.REGISTRY }}/${{ secrets.BEDROCKCONNECT }}:latest
+        run: |
+          docker buildx build -f ./context/Dockerfile -c ./context --tag ${{ secrets.REGISTRY }}/${{ secrets.BEDROCKCONNECT }}:latest
 
       # 只有main分支，并且符合手动推送或定时打包条件时执行推送
       - name: Push Docker image
