@@ -6,11 +6,11 @@ on:
     - cron: "0 20 1/3 * *"
   push:
     branches:
-      - main
+#      - main
       - test
   pull_request:
     branches:
-      - main
+#      - main
       - test
 
 jobs:
