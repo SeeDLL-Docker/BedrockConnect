@@ -43,7 +43,7 @@ jobs:
 
       - name: Build
         run: |
-          docker buildx build -f ./context/Dockerfile --tag ${{ secrets.REGISTRY }}/${{ secrets.BEDROCKCONNECT }}:latest ./context
+          docker buildx build --load -f ./context/Dockerfile --tag ${{ secrets.REGISTRY }}/${{ secrets.BEDROCKCONNECT }}:latest ./context
 
       # 只有main分支，并且符合手动推送或定时打包条件时执行推送
       - name: Push Docker image
