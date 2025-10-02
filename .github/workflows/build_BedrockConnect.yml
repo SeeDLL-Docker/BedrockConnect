@@ -6,12 +6,8 @@ on:
     - cron: "0 20 1/3 * *"
   push:
     branches:
-#      - main
-      - test
-  pull_request:
-    branches:
-#      - main
-      - test
+      - main
+#      - test
 
 jobs:
   buildx:
